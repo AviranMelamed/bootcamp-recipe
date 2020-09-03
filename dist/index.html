@@ -8,12 +8,30 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="search-container">
+        <input id="input" placeholder="Your Ingredient" type="text">          
+        <button onclick=fetch()>Search!</button>
+    </div>
 
-     
+     <div id="recipes"></div>
+   <script id="recipe-template" type="text/x-handlebars-template">
+      {{#each data}}
+      <div class="">
+          <h1 class="">{{title}}</h1>
+        <img class="" src="{{thumbnail}}">
+        <h3>What you need to the recipe? only:</h3>
+          {{#each ingredients}}
+            <ul>{{this}}</ul>
+            {{/each}}
+          
+            <a href={{href}} target="_blank"><h4>Watch In Youtube!</h4></a>
 
+      </div>
+      {{/each}}
+  </script>   
     <script src="/handlebars/dist/handlebars.js"></script>
     <script src="/jquery/dist/jquery.js"></script>
+    <script src="Render.js"></script>
     <script src="main.js"></script>
 </body>
 
